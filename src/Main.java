@@ -31,5 +31,6 @@ public class Main {
         Player[] players = readPlayers(br, board);
         Game game = new Game(board, players);
         game.play();
+        System.out.println(game.getResult());
     }
 }

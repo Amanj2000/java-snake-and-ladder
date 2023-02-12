@@ -13,26 +13,31 @@ public class Player {
         reachedLastSquare = false;
     }
 
-    public int roll() {
-        // generate a random value between 1 and 6
+    public int roll(StringBuilder message) {
         int value = (int)(Math.random() * 6 + 1);
 
         if(position + value < board.getnSquares()) {
             position += value;
+            int prevPosition = position;
             position = board.next(position);
+
+            if(position > prevPosition) {
+                message.append("Climbed ladder.");
+            } else if(position < prevPosition) {
+                message.append("Snake bite.. Going down.");
+            }
         } else if(position + value == board.getnSquares()) {
             position += value;
+            message.append("Hurray! reached the end.");
             reachedLastSquare = true;
+        } else {
+            message.append("need less steps than current roll to reach the end.");
         }
 
         return value;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
     public int getPosition() { return position; }
-    public boolean isReachedLastSquare() {
-        return reachedLastSquare;
-    }
+    public boolean isReachedLastSquare() { return reachedLastSquare; }
 }
