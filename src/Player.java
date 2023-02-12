@@ -1,6 +1,6 @@
 public class Player {
-    private String name;
-    private Board board;
+    private final String name;
+    private final Board board;
     private int position;
     private boolean reachedLastSquare;
 

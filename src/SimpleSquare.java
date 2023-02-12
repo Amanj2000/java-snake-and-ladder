@@ -1,17 +1,5 @@
-public class SimpleSquare implements Square {
-    private int start;
-    private int end;
-
+public class SimpleSquare extends Square {
     SimpleSquare(int position) {
-        this.start = this.end = position;
-    }
-
-    public int next() {
-        return this.end;
-    }
-
-    @Override
-    public String toString() {
-        return "start: " + start + " " + "end: " + end;
+        super(position, position);
     }
 }
