@@ -1,3 +1,5 @@
+package board;
+
 public class Square {
     private final int start;
     private final int end;

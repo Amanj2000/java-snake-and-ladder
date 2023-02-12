@@ -1,3 +1,5 @@
+import board.Board;
+
 public class Player {
     private final String name;
     private final Board board;

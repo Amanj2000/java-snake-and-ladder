@@ -1,28 +1,24 @@
+import board.Board;
+import utility.Utility;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Game {
-    static Board configBoard(BufferedReader br) throws IOException {
-        System.out.print("Enter board Size: ");
-        int boardSize = Integer.parseInt(br.readLine());
-        System.out.print("Enter no. of Snakes: ");
-        int nSnakes = Integer.parseInt(br.readLine());
-        System.out.print("Enter no. of Ladders: ");
-        int nLadders = Integer.parseInt(br.readLine());
-
+    static Board configBoard(BufferedReader br) {
+        int boardSize = Utility.readInt(br, "Enter board Size: ");
+        int nSnakes = Utility.readInt(br, "Enter no. of Snakes: ");
+        int nLadders = Utility.readInt(br, "Enter no. of Ladders: ");
         return new Board(boardSize, nSnakes, nLadders);
     }
 
     static Player[] readPlayers(BufferedReader br, Board board) throws IOException {
-        System.out.print("Enter no. of Players: ");
-        int n = Integer.parseInt(br.readLine());
-
+        int n = Utility.readInt(br, "Enter no. of Players: ");
         Player[] players = new Player[n];
         for(int i=0; i<n; i++) {
             System.out.print("Enter name of Player" + (i+1) + ": ");
-            String name = br.readLine();
-            players[i] = new Player(name, board);
+            players[i] = new Player(br.readLine(), board);
         }
         return players;
     }

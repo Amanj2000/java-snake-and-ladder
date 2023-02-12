@@ -1,3 +1,11 @@
+package board;
+
+import board.LadderSquare;
+import board.SimpleSquare;
+import board.SnakeSquare;
+import board.Square;
+import utility.Utility;
+
 public class Board {
     private final int boardSize;
     private final int nSnakes;
@@ -6,7 +14,7 @@ public class Board {
     private final Square[] board;
     private final boolean[] occupied;
 
-    Board(int size, int nSnakes, int nLadders) {
+    public Board(int size, int nSnakes, int nLadders) {
         this.boardSize = size;
         this.nSnakes = nSnakes;
         this.nLadders = nLadders;
