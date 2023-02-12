@@ -1,9 +1,5 @@
 package board;
 
-import board.LadderSquare;
-import board.SimpleSquare;
-import board.SnakeSquare;
-import board.Square;
 import utility.Utility;
 
 public class Board {

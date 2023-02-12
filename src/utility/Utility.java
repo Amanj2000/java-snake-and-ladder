@@ -29,8 +29,7 @@ public class Utility {
         while(true) {
             try {
                 System.out.print(message);
-                int n = Integer.parseInt(br.readLine());
-                return n;
+                return Integer.parseInt(br.readLine());
             } catch(NumberFormatException e) {
                 System.out.println("Enter a valid number.");
             } catch(IOException e) {
