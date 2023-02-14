@@ -13,12 +13,12 @@ public class Main {
         return new Board(boardSize, nSnakes, nLadders);
     }
 
-    static Player[] readPlayers(BufferedReader br, Board board) throws IOException {
+    static Player[] readPlayers(BufferedReader br) throws IOException {
         int n = Utility.readInt(br, "Enter no. of Players: ");
         Player[] players = new Player[n];
         for(int i=0; i<n; i++) {
             System.out.print("Enter name of Player" + (i+1) + ": ");
-            players[i] = new Player(br.readLine(), board);
+            players[i] = new Player(br.readLine());
         }
         return players;
     }
@@ -28,7 +28,7 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Board board = configBoard(br);
-        Player[] players = readPlayers(br, board);
+        Player[] players = readPlayers(br);
         Game game = new Game(board, players);
         game.play();
         System.out.println(game.getResult());
